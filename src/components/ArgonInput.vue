@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group">
+  <div class="form-group align-items-center">
     <div :class="hasIcon(icon)">
       <span v-if="iconDir === 'left'" class="input-group-text">
         <i :class="getIcon(icon)"></i>
@@ -7,9 +7,10 @@
       <input
         :type="type"
         class="form-control"
-        :class="getClasses(size, valid)"
+        :class="getClasses(size, valid, align)"
         :name="name"
         :id="id"
+        :align="align"
         :value="modelValue"
         :placeholder="placeholder"
         :isRequired="isRequired"
@@ -37,6 +38,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    align: {
+      type: String,
+      default: "default",
+    },
     icon: String,
     iconDir: String,
     name: String,
@@ -47,14 +52,17 @@ export default {
     isRequired: Boolean,
   },
   methods: {
-    getClasses: (size, valid) => {
-      let sizeValue, isValidValue;
+    getClasses: (size, valid, align) => {
+      let sizeValue, isValidValue, alignValue;
 
       sizeValue = size ? `form-control-${size}` : null;
 
+      alignValue = align ? `form-row align-items-${align}` : null;
+
+
       isValidValue = valid ? `${valid}` : "invalid";
 
-      return `${sizeValue} ${isValidValue}`;
+      return `${sizeValue} ${isValidValue} ${alignValue}`;
     },
     getIcon: (icon) => (icon ? icon : null),
     hasIcon: (icon) => (icon ? "input-group" : null),

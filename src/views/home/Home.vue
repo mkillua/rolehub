@@ -1,30 +1,33 @@
 <template>
   <div class="container-fluid">
-    <div class="row mt-5">
-      <div class="col-lg-8 mb-lg-12 mb-4">
-        <!-- preciso corrigir isso aqui-->
+    <div class="row row-center mt-5">
+      <div class="col-lg-8 mb-4">
+        <div class="card-header">
+          <h1 class="font-weight-bolder">Qual será o próximo Role?</h1>
+          <p>procure já</p>
+          <form class="form-center  col-6 mt-6" role="form-control-lg" @submit.prevent="signInButtonPressed">
+            <argon-input
+              v-model="search"
+              type="search"
+              size="lg"
+              placeholder="Pesquise ...."
+            />
+          </form>
+        </div>
       </div>
+
       <div class="col-lg-4">
         <carousel />
       </div>
     </div>
   </div>
-  
-  <div class="card-header">
-    <h4 class="font-weight-bolder">Qual será o próximo Role?</h4>
-    <p class="mb-0">procure já</p>
-  </div>
-  <div class="card-body col-lg-6">
-    <form role="form-control-lg" @submit.prevent="signInButtonPressed">
-      <argon-input v-model="search" type="search" placeholder="Pesquise ...." />
-    </form>
-  </div>
-  <div class="grid">
-    <div class="row">
-      <div class="row">
+  <hr/>
+  <div class="container-fluid">
+    <div class="grid">
+      <div class="row col-12 ">
         <div
           v-for="(hobbie, index) in hobbies"
-          class="col-md-4 mt-5"
+          class="col-md-6 mt-4 mw-100"
           v-bind:key="index"
         >
           <default-info-card
@@ -33,6 +36,10 @@
             :desc="hobbie.description"
             :price="temp.people"
           />
+
+          <argon-button fullWidth color="info" variant="gradient" class=""
+            >Juntar-se a</argon-button
+          >
         </div>
       </div>
     </div>
@@ -43,6 +50,7 @@ import Carousel from "../components/Carousel.vue";
 import DefaultInfoCard from "../../examples/Cards/DefaultInfoCard.vue";
 import ArgonInput from "../../components/ArgonInput.vue";
 import hobbierRequest from "../../requests/hobbies";
+import ArgonButton from "../../components/ArgonButton.vue";
 
 export default {
   name: "home",
@@ -60,6 +68,7 @@ export default {
     Carousel,
     DefaultInfoCard,
     ArgonInput,
+    ArgonButton,
   },
   beforeMount() {
     hobbierRequest

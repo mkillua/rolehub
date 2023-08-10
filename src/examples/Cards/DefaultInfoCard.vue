@@ -9,10 +9,10 @@
       </div>
     </div>
     <div class="p-3 pt-0 text-center card-body">
-      <h6 class="mb-0 text-center">{{ title }}</h6>
-      <span class="text-xs">{{ desc }}</span>
+      <h6 class="mb-0 card-title">{{ title }}</h6>
+      <span class="card-text text-xs">{{ desc }}</span>
       <hr class="my-3 horizontal dark" />
-      <h5 class="mb-0">{{ price }}</h5>
+      <h6 class="mb-0">{{ price }}</h6>
     </div>
   </div>
 </template>

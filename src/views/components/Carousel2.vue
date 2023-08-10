@@ -1,0 +1,74 @@
+<template>
+    <div class="card card-carousel overflow-hidden h-100 p-0">
+      <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+        <div class="carousel-inner border-radius-lg h-100">
+          <!-- começa aqui -->
+          <div
+            class="carousel-item h-100 active"
+            :style="{backgroundImage: 'url(' + require('../../assets/img/sorvete.jpg') + ')',
+        backgroundSize: 'cover'}"
+          >
+            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                <i class="ni ni-camera-compact text-dark opacity-10"></i>
+              </div>
+              <h5 class="text-white mb-1">Vem ai o maior encontro de sorvete do brasil</h5>
+              <p>mais de 200 opções de sorvete no.</p>
+            </div>
+          </div>
+          <div
+            class="carousel-item h-100"
+            :style="{backgroundImage: 'url(' + require('../../assets/img//volley.jpg') + ')',
+        backgroundSize: 'cover'}"
+          >
+            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                <i class="ni ni-bulb-61 text-dark opacity-10"></i>
+              </div>
+              <h5 class="text-white mb-1">Campeonato de futevolei começou</h5>
+              <p>Junte-se a turma rumo ao titulo.</p>
+            </div>
+          </div>
+          <div
+            class="carousel-item h-100"
+            :style="{backgroundImage: 'url(' + require('../../assets/img/carousel-3.jpg') + ')',
+        backgroundSize: 'cover'}"
+          >
+            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+              <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                <i class="ni ni-trophy text-dark opacity-10"></i>
+              </div>
+              <h5 class="text-white mb-1">Share with us your design tips!</h5>
+              <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
+            </div>
+          </div>
+        </div>
+        <!-- termina aqui -->
+        <button
+          class="carousel-control-prev w-5 me-3"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next w-5 me-3"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    name: "carousel",
+  };
+  </script>
+  

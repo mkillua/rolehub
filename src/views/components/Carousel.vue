@@ -1,73 +1,84 @@
 <template>
-  <div class="card card-carousel overflow-hidden h-100 p-0">
-    <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
-      <div class="carousel-inner border-radius-lg h-100">
-        <!-- começa aqui -->
-        <div
-          class="carousel-item h-100 active"
-          :style="{backgroundImage: 'url(' + require('../../assets/img/sorvete.jpg') + ')',
-      backgroundSize: 'cover'}"
-        >
-          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-              <i class="ni ni-camera-compact text-dark opacity-10"></i>
-            </div>
-            <h5 class="text-white mb-1">Vem ai o maior encontro de sorvete do brasil</h5>
-            <p>mais de 200 opções de sorvete prometem derreter seu coração.</p>
-          </div>
-        </div>
-        <div
-          class="carousel-item h-100"
-          :style="{backgroundImage: 'url(' + require('../../assets/img//volley.jpg') + ')',
-      backgroundSize: 'cover'}"
-        >
-          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-              <i class="ni ni-bulb-61 text-dark opacity-10"></i>
-            </div>
-            <h5 class="text-white mb-1">Campeonato de futevolei começou</h5>
-            <p>Junte-se a turma rumo ao titulo.</p>
-          </div>
-        </div>
-        <div
-          class="carousel-item h-100"
-          :style="{backgroundImage: 'url(' + require('../../assets/img/carousel-3.jpg') + ')',
-      backgroundSize: 'cover'}"
-        >
-          <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
-            <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
-              <i class="ni ni-trophy text-dark opacity-10"></i>
-            </div>
-            <h5 class="text-white mb-1">Share with us your design tips!</h5>
-            <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
-          </div>
+  <div
+    id="carouselExampleDark"
+    class="carousel carousel-dark slide"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div
+        v-for="(object, index) in objects"
+        v-bind:key="index"
+        v-bind:class="index == 0 ? 'carousel-item active' : 'carousel-item'"
+        data-bs-interval="10000"
+      >
+        <img :src="getImgUrl(object.image)" class="img-fluid" alt="" />
+        <div class="carousel-caption d-md-block">
+          <h5 class="fw-bolder bg-light bg-gradient">{{object.title}}</h5>
+          <p class="fw-bolder text-white">{{object.description}}.</p>
         </div>
       </div>
-      <!-- termina aqui -->
-      <button
-        class="carousel-control-prev w-5 me-3"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next w-5 me-3"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </template>
 
 <script>
 export default {
   name: "carousel",
+  data() {
+    return {
+      objects: [
+        {
+          title: "Vem ai o maior encontro de sorvete de Floripa!",
+          description: "Junte-se a nós com mais de 200 opções de sorvete",
+          image: "sorvete.jpg",
+        },
+        {
+          title: "O campeonato de futevolei começou!",
+          description:
+            "Reuna-se com os melhores do rio para o campeonato estadual",
+          image: "volley.jpg",
+        },
+      ],
+    };
+  },
+  methods: {
+    getImgUrl(imageName) {
+      return require("../../assets/img/" + imageName);
+    },
+  },
 };
 </script>
