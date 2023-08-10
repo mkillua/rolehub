@@ -1,5 +1,5 @@
 <template>
-  <div class="container top-0 position-sticky z-index-sticky">
+<div class="container top-0 position-sticky z-index-sticky">
     <div class="row">
     </div>
   </div>
@@ -10,17 +10,23 @@
           <div class="row">
             <div class="mx-auto col-xl-4 col-lg-5 col-md-7 d-flex flex-column mx-lg-0">
               <div class="card card-plain">
+                <div v-if="!authenticated" class="alert alert-warning alert-dismissible fade show" role="alert">
+                      Login e senha incorretos!
+                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    <i class=" fa fa-close"></i>
+                   </button>
+                </div>
                 <div class="pb-0 card-header text-start">
                   <h4 class="font-weight-bolder">Bem vindo ao RoleRub</h4>
                   <p class="mb-0">A rede social do Role</p>
                 </div>
                 <div class="card-body">
-                  <form role="form">
+                  <form role="form"  @submit.prevent="authenticate">
                     <div class="mb-3">
-                      <argon-input type="email" placeholder="Email" name="email" size="lg" />
+                      <argon-input v-model="auth.email" type="email" placeholder="Email" name="email" size="lg" />
                     </div>
                     <div class="mb-3">
-                      <argon-input type="password" placeholder="Password" name="password" size="lg" />
+                      <argon-input v-model="auth.password" type="password" placeholder="Password" name="password" size="lg" />
                     </div>
                     <argon-switch id="rememberMe">lembrar-me</argon-switch>
 
@@ -39,7 +45,7 @@
                   <p class="mx-auto mb-4 text-sm">
                     Ainda não tem uma conta?
                     <a
-                      href="signup"
+                      href="register"
                       class="text-success text-gradient font-weight-bold"
                     >Crie uma já</a>
                   </p>
@@ -69,33 +75,3 @@
     </section>
   </main>
 </template>
-
-<script>
-import ArgonInput from "@/components/ArgonInput.vue";
-import ArgonSwitch from "@/components/ArgonSwitch.vue";
-import ArgonButton from "@/components/ArgonButton.vue";
-const body = document.getElementsByTagName("body")[0];
-
-export default {
-  name: "signin",
-  components: {
-    ArgonInput,
-    ArgonSwitch,
-    ArgonButton,
-  },
-  created() {
-    this.$store.state.hideConfigButton = true;
-    this.$store.state.showNavbar = false;
-    this.$store.state.showSidenav = false;
-    this.$store.state.showFooter = false;
-    body.classList.remove("bg-gray-100");
-  },
-  beforeUnmount() {
-    this.$store.state.hideConfigButton = false;
-    this.$store.state.showNavbar = false;
-    this.$store.state.showSidenav = false;
-    this.$store.state.showFooter = false;
-    body.classList.add("bg-gray-100");
-  },
-};
-</script>

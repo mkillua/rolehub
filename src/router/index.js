@@ -1,23 +1,34 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Dashboard from "../views/Dashboard.vue";
 import Tables from "../views/Tables.vue";
+import Home from "../views/home/Home.vue";
 import Billing from "../views/Billing.vue";
 import VirtualReality from "../views/VirtualReality.vue";
 import RTL from "../views/Rtl.vue";
 import Profile from "../views/Profile.vue";
-import Signup from "../views/Signup.vue";
-import Signin from "../views/Signin.vue";
+import Register from "../views/register/Register.vue";
+import Login from "../views/login/Login.vue";
 
 const routes = [
   {
     path: "/",
     name: "/",
-    redirect: "/signin",
+    redirect: "/login",
   },
   {
-    path: "/dashboard-default",
+    path: "/dash",
     name: "Dashboard",
     component: Dashboard,
+  },
+  {
+    path: "/home",
+    name: "Home",
+    component: Home,
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
   },
   {
     path: "/tables",
@@ -45,16 +56,10 @@ const routes = [
     component: Profile,
   },
   {
-    path: "/signin",
-    name: "Signin",
-    component: Signin,
-  },
-  {
-    path: "/signup",
-    name: "Signup",
-    component: Signup,
-  },
-  
+    path: "/register",
+    name: "Register",
+    component: Register,
+  }
 ];
 
 const router = createRouter({

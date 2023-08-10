@@ -6,7 +6,7 @@
     <ul class="navbar-nav">
       <li class="nav-item">
         <sidenav-item
-          url="/dashboard-default"
+          url="/home"
           :class="getRoute() === 'dashboard-default' ? 'active' : ''"
           :navText="this.$store.state.isRTL ? 'لوحة القيادة' : 'Dashboard'"
         >
@@ -93,7 +93,7 @@
       <li class="nav-item">
         <sidenav-item
           url="/signin"
-          :class="getRoute() === 'signin' ? 'active' : ''"
+          :class="getRoute() === 'register' ? 'active' : ''"
           :navText="this.$store.state.isRTL ? 'تسجيل الدخول' : 'Sign In'"
         >
           <template v-slot:icon>
@@ -114,17 +114,9 @@
       </li>
     </ul>
   </div>
-  <div class="pt-3 mx-3 mt-3 sidenav-footer">
-    <sidenav-card
-      :class="cardBg"
-      textPrimary="Need Help?"
-      textSecondary="Please check our docs"
-    />
-  </div>
 </template>
 <script>
 import SidenavItem from "./SidenavItem.vue";
-import SidenavCard from "./SidenavCard.vue";
 
 export default {
   name: "SidenavList",
@@ -133,14 +125,13 @@ export default {
   },
   data() {
     return {
-      title: "Argon Dashboard 2",
+      title: "Role hub",
       controls: "dashboardsExamples",
       isActive: "active"
     };
   },
   components: {
-    SidenavItem,
-    SidenavCard
+    SidenavItem
   },
   methods: {
     getRoute() {

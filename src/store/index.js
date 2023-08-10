@@ -1,4 +1,4 @@
-import { createStore } from "vuex";
+import { createStore, useStore as VuexUseStore } from "vuex";
 
 export default createStore({
   state: {
@@ -16,7 +16,13 @@ export default createStore({
     showNavbar: true,
     showFooter: true,
     showMain: true,
-    layout: "default"
+    layout: "default",
+    user: {
+      name: '',
+      email: '',
+      phone_number: ''
+    },
+    token: {}
   },
   mutations: {
     toggleConfigurator(state) {
@@ -38,6 +44,12 @@ export default createStore({
     sidebarType(state, payload) {
       state.sidebarType = payload;
     },
+    setUser(state, user){
+      state.user = user;
+    },
+    setToken(state, token){
+      state.token = token;
+    },
     navbarFixed(state) {
       if (state.isNavFixed === false) {
         state.isNavFixed = true;
@@ -53,3 +65,7 @@ export default createStore({
   },
   getters: {}
 });
+
+export function useStore() {
+  return VuexUseStore();
+}
