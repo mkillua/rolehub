@@ -22,7 +22,7 @@ export default createStore({
       email: '',
       phone_number: ''
     },
-    token: {}
+    authorization: {}
   },
   mutations: {
     toggleConfigurator(state) {
@@ -46,9 +46,12 @@ export default createStore({
     },
     setUser(state, user){
       state.user = user;
+      localStorage.setItem('user', user);
+
     },
-    setToken(state, token){
-      state.token = token;
+    setToken(state, authorization){
+      state.authorization = authorization;
+      localStorage.setItem('access_token', authorization.token);
     },
     navbarFixed(state) {
       if (state.isNavFixed === false) {

@@ -71,7 +71,7 @@ Let us know your thoughts below. And good luck with development!
 
 Quick start options:
 
-- Download from [Creative Tim](https://www.creative-tim.com/product/vue-argon-dashboard?ref=readme-vad).
+- Download from [Role hub](https://www.creative-tim.com/product/vue-argon-dashboard?ref=readme-vad).
 
 ## Terminal Commands
 
@@ -178,16 +178,16 @@ If you have questions or need help integrating the product please [contact us](h
 
 ## Licensing
 
-- Copyright 2022 [Creative Tim](https://www.creative-tim.com?ref=readme-vad)
-- Creative Tim [license](https://www.creative-tim.com/license?ref=readme-vad)
+- Copyright 2022 [Role hub](https://www.creative-tim.com?ref=readme-vad)
+- Role hub[license](https://www.creative-tim.com/license?ref=readme-vad)
 
 ## Useful Links
 
-- [More products](https://www.creative-tim.com/templates?ref=readme-vad) from Creative Tim
+- [More products](https://www.creative-tim.com/templates?ref=readme-vad) from Role hub
 
 - [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
 
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-vad) from Creative Tim
+- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-vad) from Role hub
 
 - [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-vad) (earn money)
 

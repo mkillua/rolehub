@@ -14,7 +14,7 @@
               href="https://www.creative-tim.com"
               class="font-weight-bold"
               target="_blank"
-              >Creative Tim</a
+              >Role hub</a
             >
             for a better web.
           </div>
@@ -28,7 +28,7 @@
                 href="https://www.creative-tim.com"
                 class="nav-link text-muted"
                 target="_blank"
-                >Creative Tim</a
+                >Role hub</a
               >
             </li>
             <li class="nav-item">

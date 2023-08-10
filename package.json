@@ -2,9 +2,9 @@
   "name": "vue-argon-dashboard-2",
   "version": "3.0.0",
   "private": true,
-  "author": "Creative Tim",
+  "author": "Role hub",
   "license": "SEE LICENSE IN <https://www.creative-tim.com/license>",
-  "description": "VueJS version of Role hub by Creative Tim",
+  "description": "VueJS version of Role hub by Role hub",
   "homepage": "https://demos.creative-tim.com/vue-argon-dashboard/",
   "bugs": {
     "url": "https://github.com/creativetimofficial/vue-argon-dashboard/issues"
