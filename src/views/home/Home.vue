@@ -1,14 +1,15 @@
 <template>
   <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-6 mb-lg-12 mb-4">
+    <div class="row mt-5">
+      <div class="col-lg-8 mb-lg-12 mb-4">
         <!-- preciso corrigir isso aqui-->
       </div>
-      <div class="col-lg-6">
+      <div class="col-lg-4">
         <carousel />
       </div>
     </div>
   </div>
+  
   <div class="card-header">
     <h4 class="font-weight-bolder">Qual será o próximo Role?</h4>
     <p class="mb-0">procure já</p>
