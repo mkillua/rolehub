@@ -62,11 +62,11 @@
               >
                 <span class="mask bg-gradient-warning opacity-6"></span>
                 <h4
-                  class="mt-6 text-white font-weight-bolder position-relative"
+                  class="text-bold mt-6 text-white font-weight-bolder position-relative"
                 >"sozinho é bom, em conjunto é muito melhor"</h4>
                 <p
-                  class="text-white position-relative"
-                >Encontre um novo hobbie, um novo amigos, uma nova vida </p>
+                  class="text-bold text-white position-relative"
+                >Encontre um novo hobbie, um novo amigo, uma nova vida </p>
               </div>
             </div>
           </div>

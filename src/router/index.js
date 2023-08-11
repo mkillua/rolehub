@@ -62,10 +62,40 @@ const routes = [
   }
 ];
 
+const privateRoutes = [
+  'Home',
+  'Profile',
+  'RTL',
+  'Tables',
+  'Billing',
+  'Dashboard'
+];
+
+
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   linkActiveClass: "active",
+});
+
+
+router.beforeEach((to, from, next) => {
+  console.log(to);
+  
+  if (privateRoutes.includes(to.name)) {
+    if (!localStorage.getItem('access_token')) {
+      next(`${'/login?next='}${to.fullPath}`);
+    }  
+  }
+
+  // redirect to dashboard page if user is already logged in
+  if (to.name === 'login') {
+    if (localStorage.getItem('access_token')) {
+      next('/dashboard');
+    }
+  }
+ 
+  next();
 });
 
 export default router;
